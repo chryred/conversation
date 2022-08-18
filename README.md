@@ -15,3 +15,9 @@
 - react설치
  . yarn create react-app fronend
  . yarn start
+- 그외 장고 실행 명령어
+ . 서버 기동: python manage.py runserver
+ . 모델 객체 생성: python manage.py makemigrations 앱이름 or 전체시 공란
+ . 모델 객체 생성 적용: python manage.py migrate 앱이름 or 전체시 공란
+ 
+

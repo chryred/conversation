@@ -1,10 +1,11 @@
 import React from "react";
+import AppLayout from "components/AppLayout";
 
 function Root() {
     return (
-        <div>
+        <AppLayout>
             최상위 컴포넌트
-        </div>
+        </AppLayout>
     );
 }
 

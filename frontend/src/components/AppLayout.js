@@ -9,6 +9,7 @@ import LogImage from "assets/logo.png";
 
 function AppLayout(props) {
   const { children } = props;
+
   return (
     <div className="app">
       {/* <AppHeader /> */}

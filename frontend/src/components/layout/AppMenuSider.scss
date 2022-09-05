@@ -1,0 +1,22 @@
+.left-sider {
+    min-width: 300px !important;
+    // margin: 0 auto;
+    padding: 15px 0 0;
+
+    .crumb {
+        padding: 0 10px 10px;
+    }
+}
+
+@media screen and (max-width: 1300px) {
+    .left-sider {
+        min-width: 0 !important;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .left-sider {
+        min-width: 0 !important;
+        padding: 0 0;
+    }
+}

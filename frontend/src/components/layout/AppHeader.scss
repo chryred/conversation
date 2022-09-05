@@ -1,0 +1,20 @@
+.header {
+    background-color: #fff !important;
+    // height: 100px !important;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    border-bottom: 1px solid #dedede;
+
+
+    .search {
+        display: flex;
+        width: 25%;
+        align-items: center;
+    }
+
+    .topnav {
+        // background-color: transparent !important;
+    }
+}

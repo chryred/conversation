@@ -45,10 +45,12 @@ INSTALLED_APPS = [
     'corsheaders',
     'rest_framework',
     'rest_framework_simplejwt',
+    'mptt',
     # local apps
     'sample',
     'common',
     'accounts',
+    'menu',
     'main',
 ]
 

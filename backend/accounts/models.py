@@ -1,3 +1,5 @@
+from enum import unique
+from gc import DEBUG_COLLECTABLE
 from django.db import models
 from django.conf import settings
 from django.contrib.auth.models import AbstractUser
@@ -5,6 +7,8 @@ from django.core.mail import send_mail
 from django.core.validators import RegexValidator
 from django.template.loader import render_to_string
 from django.shortcuts import resolve_url
+from common.models import BaseModel, UseChoices
+from menu.models import Group
 
 
 class User(AbstractUser):
@@ -52,3 +56,22 @@ class User(AbstractUser):
         sender_email = settings.WELCOME_EMAIL_SENDER
         send_mail(subject, content, sender_email, [
                   self.email], fail_silently=False)
+
+
+class Group(BaseModel):
+    user = models.ForeignKey(
+        settings.AUTH_USER_MODEL, related_name='accounts_user_set', on_delete=models.CASCADE, verbose_name='사용자아이디')
+    group = models.ForeignKey(
+        Group, related_name="accounts_group_set", on_delete=models.CASCADE, verbose_name='그룹아이디')
+    use_yn = models.CharField(
+        max_length=1, verbose_name='사용여부', choices=UseChoices.choices)
+
+    class Meta:
+        verbose_name = '계정그룹정보'
+        verbose_name_plural = '계정그룹정보'
+        constraints = [
+            models.UniqueConstraint(
+                fields=["user", "group"],
+                name="accounts_group_ux"
+            ),
+        ]

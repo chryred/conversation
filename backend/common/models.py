@@ -1,6 +1,11 @@
 from django.db import models
 
 
+class UseChoices(models.TextChoices):
+    MALE = "Y", "예"
+    FEMALE = "N", "아니오"
+
+
 class BaseModel(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)

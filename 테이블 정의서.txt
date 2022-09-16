@@ -1,0 +1,9 @@
+메뉴 그룹명(menu_group)
+  grp_cd  varchar2(6)  그룹코드
+  grp_nm  varchar2(30) 그룹명
+  grp_desc varchar2(1000) 그룹 설명
+  use_yn varchar2(1) 사용여부
+  ord_seq number(3) 정렬순번
+ 
+계정그룹정보(accounts_group)
+  user_id 

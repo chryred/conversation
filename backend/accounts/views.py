@@ -11,4 +11,3 @@ class SignupView(CreateAPIView):
     permission_classes = [
         AllowAny,
     ]
-    pass
